@@ -1,0 +1,98 @@
+# Pr1_lab7_rab_8
+?xml version="1.0" encoding="utf-8"?>
+<ROOT xmlns="XSD2.xsd">
+<table>
+<tr> <td> Имя автора  </td> <td> Cписок книг  </td></tr>
+<tr>
+<td> Пушкин  </td> <td> <table> <tr>
+<td>Название книги</td>
+<td>Количество страниц</td>
+</tr>
+<tr>
+<td>Руслан и Людмила</td>
+<td>150</td>
+</tr>
+<tr>
+<td>Сказка о рыбаке и рыбке</td>
+<td>25</td>
+</tr></table>  </td>
+</tr>
+
+<Book id_Book = "2">
+
+</Book>
+
+
+<Author id_Author = "2">
+<tr>
+<td>
+<Name_author>Толстой Л.Н.</Name_author>
+<Book id_Book = "3">
+<td>
+<table> <tr>
+<td>Название книги</td>
+<td>Количество страниц</td>
+</tr>
+
+<tr>
+<td>Война и мир</td>
+<td>1000</td>
+</tr></table> 
+
+</td>
+</Book>
+</td>
+</tr>
+</Author>
+</table>
+</ROOT>
+
+<html>
+<head>
+<style>
+table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+}
+th, td {
+padding: 5px;
+}
+</style>
+</head>
+<body>
+<script>
+if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp = new XMLHttpRequest();
+}
+else {// code for IE6, IE5
+xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.open("GET", "XML2.xml", false);
+xmlhttp.send();
+xmlDoc = xmlhttp.responseXML;
+//начинаем движение по элементам первого уровня иерархии - Авторы
+document.write("<table><tr><th>Имя автора</th><th>Список книг</th></tr>");
+var Author = xmlDoc.getElementsByTagName("Author");
+for (i = 0; i < Author.length; i++) {
+document.write("<tr><td>");
+document.write(Author[i].getElementsByTagName("Name_author")[0].childNodes[0].nodeVal
+ue);
+document.write("</td><td>");
+//начинаем движение по подчиненным элементам - Книги текущего автора
+var Book = Author[i].getElementsByTagName("Book");
+document.write("<table><tr><th>Название книги</th><th>Количество
+страниц</th></tr>");
+for (j = 0; j < Book.length; j++) {
+document.write("<tr><td>");
+document.write(Book[j].getElementsByTagName("Name")[0].childNodes[0].nodeValue);
+document.write("</td><td>");
+document.write(Book[j].getElementsByTagName("Pages")[0].childNodes[0].nodeValue);
+document.write("</td></tr>");
+}
+document.write("</table>"); //закрыли таблицу книг текущего автора
+document.write("</td></tr>"); //закрыли столбец и строку текущего автора
+}
+document.write("</table>"); //закрыли таблицу авторов
+</script>
+</body>
+</html>
