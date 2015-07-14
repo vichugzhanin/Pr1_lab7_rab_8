@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+}
+th, td {
+padding: 5px;
+}
+</style>
+</head>
+<body>
+<script>
+if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp = new XMLHttpRequest();
+}
+else {// code for IE6, IE5
+xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.open("GET", "Лекарственные средства.xml", false);
+xmlhttp.send();
+xmlDoc = xmlhttp.responseXML;
+//начинаем движение по элементам первого уровня иерархии - Лекарства
+var Medicine = xmlDoc.getElementsByTagName("Medicine");
+for (i = 0; i < Medicine.length; i++)
+{
+document.write("<tr><td>");
+document.write(Medicine[i].getElementsByTagName("Код_лекарства")[0].childNodes[0].nodeValue);
+document.write("</td><td>");
+document.write(Medicine[i].getElementsByTagName("Название_лекарства")[0].childNodes[0].nodeValue);
+document.write("</td></tr>");
+//начинаем движение по подчиненным элементам - текущие лекарство
+var information = Medicine[i].getElementsByTagName("Показания_к_применению");
+document.write("<table><tr><th>Показания_к_применению</th><th>Единица_измерения</th><th>Количество_в_упаковке</th><th>Название_производителя</th></tr>");
+for (j = 0; j < information.length; j++)
+{
+document.write("<tr><td>");
+document.write(information[j].getElementsByTagName("Код_лекарства")[0].childNodes[0].nodeValue);
+document.write("</td><td>");
+document.write(information[j].getElementsByTagName("Название_лекарства")[0].childNodes[0].nodeValue);
+document.write("</td><td>");
+document.write(information[j].getElementsByTagName("Показания_к_применению")[0].childNodes[0].nodeValue);
+document.write("</td><td>");
+document.write(information[j].getElementsByTagName("Единица_измерения")[0].childNodes[0].nodeValue);
+document.write("</td></tr>");
+document.write(information[j].getElementsByTagName("Количество_в_упаковке")[0].childNodes[0].nodeValue);
+document.write("</td></tr>");
+document.write(information[j].getElementsByTagName("Название_лекарства")[0].childNodes[0].nodeValue);
+document.write("</td></tr>");
+}
+document.write("</table>"); //закрыли таблицу  о текущем лекартсве
+</script>
+</body>
+</html>
