@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root xmlns="XSD2.xsd"> Справочник оборудования/приборов <!—обратите внимание на ссылку на xsd —> <br />
+
+<Pribor> <table border = "1"> <tr>
+<tr> <td> Приборы </td> <td> Информация о приборе </td></tr>
+<td> <table border="1"> <tr>
+<td>Код прибора</td>
+<td>Название прибора</td>
+</tr>
+<tr>
+<td><CodPribora>1</CodPribora></td>
+<td><NazvaniePribora>ПК</NazvaniePribora></td>
+</tr>
+
+<tr>
+<td><CodPribora>2</CodPribora></td>
+<td><NazvaniePribora>ПК</NazvaniePribora></td>
+</tr>
+
+<tr>
+<td><CodPribora>3</CodPribora></td>
+<td><NazvaniePribora>Кондиционер</NazvaniePribora></td>
+</tr>
+
+<tr>
+<td><CodPribora>4</CodPribora></td>
+<td><NazvaniePribora>Принтер</NazvaniePribora></td>
+</tr>
+
+<tr>
+<td><CodPribora>5</CodPribora></td>
+<td><NazvaniePribora>Шкаф</NazvaniePribora></td>
+</tr>
+
+</table>
+<td> <table border="1"> 
+<tr>
+<td>Тип прибора</td>
+<td>Дата производства</td>
+<td>Материально ответственное лицо</td>
+</tr>
+
+<tr>
+<td><TypePribora>Ноутбук</TypePribora></td>
+<td><DateProizvodstva>12.06.2014</DateProizvodstva></td>
+<td><MaterialnoOtvetstvennoeLico>Иванов И.И.</MaterialnoOtvetstvennoeLico></td>
+</tr>
+
+<tr>
+<td><TypePribora>Моноблок</TypePribora></td>
+<td><DateProizvodstva>20.06.14</DateProizvodstva></td>
+<td><MaterialnoOtvetstvennoeLico>Иванов И.И.</MaterialnoOtvetstvennoeLico></td>
+</tr>
+
+<tr>
+<td><TypePribora>Настенный</TypePribora></td>
+<td><DateProizvodstva>05.11.2012</DateProizvodstva></td>
+<td><MaterialnoOtvetstvennoeLico>Иванов И.И.</MaterialnoOtvetstvennoeLico></td>
+</tr>
+
+<tr>
+<td><TypePribora>Лазерный</TypePribora></td>
+<td><DateProizvodstva>21.01.2012</DateProizvodstva></td>
+<td><MaterialnoOtvetstvennoeLico>Иванов И.И.</MaterialnoOtvetstvennoeLico></td>
+</tr>
+
+<tr>
+<td><TypePribora>Купе</TypePribora></td>
+<td><DateProizvodstva>04.05.2011</DateProizvodstva></td>
+<td><MaterialnoOtvetstvennoeLico>Иванов И.И.</MaterialnoOtvetstvennoeLico></td>
+</tr>
+<table>
+
+</Pribor>
+</Root>
