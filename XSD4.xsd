@@ -6,18 +6,12 @@
 <xs:element name="Medicine" minOccurs="0" maxOccurs="unbounded">
 <xs:complexType>
 <xs:sequence>
-<xs:element name="information" minOccurs="0" maxOccurs="unbounded">
-<xs:complexType>
-<xs:sequence>
-<xs:element name="CodLecarstva" type="xs:string" />
-<xs:element name="NazvanieLecarstva" type="xs:int" />
-<xs:element name="Pocazaniya_k_Primeneniyu" type="xs:string" />
-<xs:element name="EdinitsaIzmereniya" type="xs:string" />
-<xs:element name="Kolichestvo_v_upakovke" type="xs:string" />
-<xs:element name="NazvanieProizvoditelya" type="xs:date" />
-</xs:sequence>
-</xs:complexType>
-</xs:element>
+<xs:element name="Код лекарства" type="xs:int" />
+<xs:element name="Название лекарства" type="xs:string" />
+<xs:element name="Показания к применению" type="xs:string" />
+<xs:element name="Еденица измерения" type="xs:string" />
+<xs:element name="Количество в упаковке" type="xs:int" />
+<xs:element name="Название производителя" type="xs:string" />
 </xs:sequence>
 </xs:complexType>
 </xs:element>
