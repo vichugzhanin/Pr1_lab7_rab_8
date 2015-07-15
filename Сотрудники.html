@@ -28,7 +28,7 @@ for (i = 0; i < sotrudnik.length; i++)
 document.write("<tr><td>");
 document.write(sotrudnik[i].getElementsByTagName("CodSotrudnika")[0].childNodes[0].nodeValue);
 document.write("</td><td>");
-document.write(sotrudnik[i].getElementsByTagName("FamilyName")[0].childNodes[0].nodeValue);
+document.write(sotrudnik[i].getElementsByTagName("Familya")[0].childNodes[0].nodeValue);
 document.write("</td></tr>");
 //начинаем движение по подчиненным элементам - текущий сотрудник
 var information = sotrudnik[i].getElementsByTagName("information");
